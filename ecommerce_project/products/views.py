@@ -6,16 +6,10 @@ from rest_framework import mixins
 from rest_framework.permissions import IsAuthenticated
 # Create your views here.
 
-
-
-
-
-
 class productcreate(generics.ListCreateAPIView):
     queryset=product.objects.all()
     serializer_class=productserializer
     permission_classes=[IsAuthenticated]
-
 
 class productdetail(mixins.RetrieveModelMixin,mixins.UpdateModelMixin,mixins.DestroyModelMixin ,generics.GenericAPIView):
     queryset=product.objects.all()
